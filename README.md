@@ -16,6 +16,13 @@ Alles steckt in einer einzigen Datei: [`index.html`](index.html).
 | Farben der Personen | `--c-name` Variablen oben im `:root` |
 | Crew-Sprüche & Missionen | Abschnitt `<!-- CREW -->` im HTML |
 | Hausregeln | Abschnitt `<!-- REGELN -->` im HTML |
+| Portraits | `img/<name>.webp` |
+
+### Portraits austauschen
+
+Die Bilder liegen als quadratische WebP mit 320 × 320 px in `img/`, damit die
+Seite auf dem Handy schnell lädt (jeweils ~25 KB). Neues Bild einfach unter
+gleichem Namen ablegen – am besten vorher quadratisch aufs Gesicht zuschneiden.
 
 ### Landezeiten
 
