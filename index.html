@@ -290,10 +290,41 @@
     color:color-mix(in srgb, var(--pcolor) 68%, var(--ink));
   }
   .mate p{position:relative; font-size:12.5px; font-weight:600; color:var(--muted); margin-top:9px;}
-  .mate p.mission{
-    margin-top:11px; padding-top:10px; border-top:1px dashed var(--line);
-    font-size:12px; font-weight:800; color:var(--ink);
+  /* Steckbrief auf der Karte */
+  .steckbrief{
+    position:relative;
+    margin-top:12px; padding-top:11px; border-top:1px dashed var(--line);
+    display:grid; gap:9px;
   }
+  .sb-k{
+    display:block; font-size:9.5px; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+    color:color-mix(in srgb, var(--pcolor) 50%, var(--muted));
+  }
+  .sb-v{display:block; margin-top:2px; font-size:13px; font-weight:700; color:var(--ink); overflow-wrap:anywhere;}
+  .sb-v.leer{font-weight:600; font-style:italic; color:var(--muted);}
+  .sb-i{
+    display:none; width:100%; margin-top:3px;
+    font-family:var(--body); font-size:13.5px; font-weight:600; color:var(--ink);
+    background:var(--paper); border:1.5px solid var(--line); border-radius:11px; padding:10px 12px;
+  }
+  .sb-i:focus{outline:none; border-color:var(--pcolor); background:var(--card);}
+  .mate.is-editing .sb-v{display:none;}
+  .mate.is-editing .sb-i{display:block;}
+
+  .sb-actions{display:none; align-items:center; flex-wrap:wrap; gap:8px; margin-top:3px; min-height:34px;}
+  body.db-ok .sb-actions{display:flex;}
+  .sb-btn{
+    font-family:var(--body); font-size:12px; font-weight:800; cursor:pointer;
+    border:1.5px solid var(--line); background:var(--paper); color:var(--muted);
+    border-radius:99px; padding:9px 14px;
+  }
+  .sb-btn:active{transform:scale(.96);}
+  .sb-btn[disabled]{opacity:.5;}
+  .sb-save{background:var(--pcolor); border-color:var(--pcolor); color:#fff;}
+  .sb-save, .sb-cancel{display:none;}
+  .mate.is-editing .sb-edit{display:none;}
+  .mate.is-editing .sb-save, .mate.is-editing .sb-cancel{display:inline-block;}
+  .sb-status{font-size:11.5px; font-weight:700; color:var(--muted);}
 
   .band{background:var(--card); border-block:1px solid var(--line);}
 
@@ -468,7 +499,7 @@
 
     <!-- Sprüche und Missionen einfach hier im HTML anpassen -->
     <div class="crew">
-      <article class="mate" style="--pcolor:var(--c-laura)">
+      <article class="mate" data-person="laura" style="--pcolor:var(--c-laura)">
         <div class="mate-head">
           <div class="face"><img src="img/laura.webp" alt="Laura" width="320" height="320" loading="lazy" decoding="async"></div>
           <div>
@@ -477,9 +508,8 @@
           </div>
         </div>
         <p>Denkt an Dinge, an die sonst keiner denkt, und tut so, als wäre das Zufall gewesen.</p>
-        <p class="mission">Mission: dass es allen gut geht.</p>
       </article>
-      <article class="mate" style="--pcolor:var(--c-teresa)">
+      <article class="mate" data-person="teresa" style="--pcolor:var(--c-teresa)">
         <div class="mate-head">
           <div class="face"><img src="img/teresa.webp" alt="Teresa" width="320" height="320" loading="lazy" decoding="async"></div>
           <div>
@@ -488,9 +518,8 @@
           </div>
         </div>
         <p>Hat für jede Situation die passende Geschichte und für jede Geschichte die passende Länge.</p>
-        <p class="mission">Mission: mehr Meer.</p>
       </article>
-      <article class="mate" style="--pcolor:var(--c-emma)">
+      <article class="mate" data-person="emma" style="--pcolor:var(--c-emma)">
         <div class="mate-head">
           <div class="face"><img src="img/emma.webp" alt="Emma" width="320" height="320" loading="lazy" decoding="async"></div>
           <div>
@@ -499,9 +528,8 @@
           </div>
         </div>
         <p>Merkt sich Kleinigkeiten über Leute, die die selbst längst vergessen haben.</p>
-        <p class="mission">Mission: ausschlafen ohne schlechtes Gewissen.</p>
       </article>
-      <article class="mate" style="--pcolor:var(--c-helen)">
+      <article class="mate" data-person="helen" style="--pcolor:var(--c-helen)">
         <div class="mate-head">
           <div class="face"><img src="img/helen.webp" alt="Helen" width="320" height="320" loading="lazy" decoding="async"></div>
           <div>
@@ -510,9 +538,8 @@
           </div>
         </div>
         <p>Hat nach zehn Minuten das Gefühl, schon die ganze Zeit dabei gewesen zu sein.</p>
-        <p class="mission">Mission: ankommen und nicht mehr weg wollen.</p>
       </article>
-      <article class="mate" style="--pcolor:var(--c-maya)">
+      <article class="mate" data-person="maya" style="--pcolor:var(--c-maya)">
         <div class="mate-head">
           <div class="face"><img src="img/maya.webp" alt="Maya" width="320" height="320" loading="lazy" decoding="async"></div>
           <div>
@@ -521,9 +548,8 @@
           </div>
         </div>
         <p>Lacht zu früh über die eigenen Witze – und liegt damit erstaunlich oft richtig.</p>
-        <p class="mission">Mission: jeden Abend ein Sonnenuntergang.</p>
       </article>
-      <article class="mate" style="--pcolor:var(--c-paul)">
+      <article class="mate" data-person="paul" style="--pcolor:var(--c-paul)">
         <div class="mate-head">
           <div class="face"><img src="img/paul.webp" alt="Paul" width="320" height="320" loading="lazy" decoding="async"></div>
           <div>
@@ -532,7 +558,6 @@
           </div>
         </div>
         <p>Braucht morgens kurz für sich und ist danach für alles zu haben. Kann gut zuhören und schlecht stillsitzen.</p>
-        <p class="mission">Mission: einmal richtig nichts tun.</p>
       </article>
     </div>
   </div>
@@ -607,6 +632,24 @@
     { name:"Maya",   color:"c-maya",   target:"2026-09-02T17:55:00+02:00", meta:"landet Mi, 17:55 Uhr" },
     { name:"Helen",  color:"c-helen",  target:"2026-09-03T20:30:00+02:00", meta:"landet Do, 20:30 Uhr" },
   ];
+
+  /* Steckbrief-Felder: Reihenfolge = Reihenfolge auf der Karte.
+     [Schlüssel in der Datenbank, Überschrift, Platzhalter im Eingabefeld] */
+  const SB_FIELDS = [
+    ["mission",     "Meine Mission",       "Deine Mission …"],
+    ["highlight",   "Mein Highlight wird", "Worauf du dich freust …"],
+    ["mitbringsel", "Ich bringe mit",      "Was du mitbringst …"],
+  ];
+
+  /* Anzeige, solange die Datenbank noch nichts geliefert hat */
+  const SB_DEFAULT = {
+    laura:  { mission:"dass es allen gut geht" },
+    teresa: { mission:"mehr Meer" },
+    emma:   { mission:"ausschlafen ohne schlechtes Gewissen" },
+    helen:  { mission:"ankommen und nicht mehr weg wollen" },
+    maya:   { mission:"jeden Abend ein Sonnenuntergang" },
+    paul:   { mission:"einmal richtig nichts tun" },
+  };
 
   /* Packliste – Einträge hier einfach ergänzen oder rauswerfen */
   const PACKLISTE = [
@@ -697,6 +740,58 @@
   tick();
   setInterval(tick, 1000);
 
+  /* ---------- Steckbriefe aufbauen ----------
+     Läuft ohne Netz: die Karten zeigen erst SB_DEFAULT. Das Modul weiter
+     unten holt danach die echten Werte aus Supabase und schaltet das
+     Bearbeiten frei. Fällt Supabase aus, bleibt einfach das hier stehen. */
+  document.querySelectorAll('.mate[data-person]').forEach(card => {
+    const person = card.dataset.person;
+    const name = card.querySelector('h3').textContent;
+    const box = document.createElement('div');
+    box.className = 'steckbrief';
+
+    for(const [key, label, placeholder] of SB_FIELDS){
+      const row = document.createElement('div');
+
+      const k = document.createElement('span');
+      k.className = 'sb-k';
+      k.textContent = label;
+
+      const v = document.createElement('span');
+      v.className = 'sb-v';
+      v.dataset.f = key;
+      const preset = (SB_DEFAULT[person] || {})[key] || '';
+      if(preset){
+        v.textContent = preset;
+      } else {
+        v.textContent = 'noch offen';
+        v.classList.add('leer');
+      }
+
+      const i = document.createElement('input');
+      i.className = 'sb-i';
+      i.dataset.f = key;
+      i.type = 'text';
+      i.maxLength = 120;
+      i.placeholder = placeholder;
+      i.setAttribute('aria-label', label + ' von ' + name);
+
+      row.append(k, v, i);
+      box.appendChild(row);
+    }
+
+    const actions = document.createElement('div');
+    actions.className = 'sb-actions';
+    actions.innerHTML =
+      '<button class="sb-btn sb-edit" type="button">✏️ bearbeiten</button>' +
+      '<button class="sb-btn sb-save" type="button">Speichern</button>' +
+      '<button class="sb-btn sb-cancel" type="button">Abbrechen</button>' +
+      '<span class="sb-status"></span>';
+    box.appendChild(actions);
+
+    card.appendChild(box);
+  });
+
   /* ---------- Packliste ---------- */
   const KEY = 'mallorca26-packliste';
   const packEl = document.getElementById('pack');
@@ -745,6 +840,105 @@
   });
 
   updateBar();
+</script>
+
+<script type="module">
+  /* ───────── Steckbriefe live aus Supabase ─────────
+     Der anon-Key ist ein öffentlicher Schlüssel und gehört genau hierhin.
+     Der service_role-Key darf hier NIEMALS stehen. */
+  const SUPABASE_URL  = 'https://cyqtqdcxpxsepnfcslsa.supabase.co';
+  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN5cXRxZGN4cHhzZXBuZmNzbHNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgyNjI1MjgsImV4cCI6MjEwMzgzODUyOH0.w-FNecNAiSEk6C3C368aQP_Cwp7VNw8cnliUeoIj_2U';
+  const TABLE = 'steckbriefe';
+
+  const cards = new Map();
+  document.querySelectorAll('.mate[data-person]').forEach(c => cards.set(c.dataset.person, c));
+  const FIELDS = [...document.querySelectorAll('.mate .sb-v')].map(v => v.dataset.f)
+                   .filter((v, i, a) => a.indexOf(v) === i);
+
+  function show(card, field, value){
+    const el = card.querySelector('.sb-v[data-f="' + field + '"]');
+    if(!el) return;
+    const text = (value || '').trim();
+    el.textContent = text || 'noch offen';
+    el.classList.toggle('leer', !text);
+  }
+
+  function applyRow(row){
+    const card = cards.get(row.name);
+    if(!card || card.classList.contains('is-editing')) return;
+    for(const f of FIELDS) show(card, f, row[f]);
+  }
+
+  let sb;
+  try{
+    const { createClient } = await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
+    sb = createClient(SUPABASE_URL, SUPABASE_ANON);
+
+    const { data, error } = await sb.from(TABLE).select('name,' + FIELDS.join(','));
+    if(error) throw error;
+    data.forEach(applyRow);
+
+    wire();
+    document.body.classList.add('db-ok');
+
+    sb.channel('steckbriefe-live')
+      .on('postgres_changes', { event:'UPDATE', schema:'public', table:TABLE },
+          payload => applyRow(payload.new))
+      .subscribe();
+  }catch(err){
+    console.warn('Steckbriefe bleiben statisch – Supabase nicht erreichbar:', err);
+  }
+
+  function wire(){
+    cards.forEach((card, person) => {
+      const edit   = card.querySelector('.sb-edit');
+      const save   = card.querySelector('.sb-save');
+      const cancel = card.querySelector('.sb-cancel');
+      const status = card.querySelector('.sb-status');
+      const inputs = [...card.querySelectorAll('.sb-i')];
+
+      edit.addEventListener('click', () => {
+        for(const i of inputs){
+          const v = card.querySelector('.sb-v[data-f="' + i.dataset.f + '"]');
+          i.value = v.classList.contains('leer') ? '' : v.textContent;
+        }
+        status.textContent = '';
+        card.classList.add('is-editing');
+        inputs[0].focus();
+      });
+
+      cancel.addEventListener('click', () => {
+        card.classList.remove('is-editing');
+        status.textContent = '';
+      });
+
+      for(const i of inputs){
+        i.addEventListener('keydown', e => { if(e.key === 'Enter') save.click(); });
+      }
+
+      save.addEventListener('click', async () => {
+        const patch = {};
+        for(const i of inputs) patch[i.dataset.f] = i.value.trim().slice(0, 120);
+
+        save.disabled = true;
+        status.textContent = 'speichert …';
+
+        const { error } = await sb.from(TABLE).update(patch).eq('name', person);
+        save.disabled = false;
+
+        if(error){
+          status.textContent = 'hat nicht geklappt';
+          console.warn(error);
+          return;
+        }
+
+        card.classList.remove('is-editing');
+        for(const [f, v] of Object.entries(patch)) show(card, f, v);
+        status.textContent = 'gespeichert ✓';
+        setTimeout(() => { status.textContent = ''; }, 2500);
+      });
+    });
+  }
 </script>
 
 </body>
