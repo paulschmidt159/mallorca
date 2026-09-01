@@ -1,7 +1,7 @@
 # 🌴 Mallorca 2026
 
-Kleine Urlaubs-Seite für unseren Mallorca-Trip: Live-Countdown, wer wann landet,
-die Crew, ein grober Fahrplan, Spots, Hausregeln und eine Packliste zum Abhaken.
+Kleine Urlaubs-Seite für unseren Trip nach Cala Pi: Live-Countdown, wer wann landet,
+die Crew, die Hausregeln und eine Packliste zum Abhaken.
 
 **Live:** https://paulschmidt159.github.io/mallorca/
 
@@ -14,8 +14,8 @@ Alles steckt in einer einzigen Datei: [`index.html`](index.html).
 | Landezeiten & Namen | `const PEOPLE = [...]` ganz unten im `<script>` |
 | Packliste | `const PACKLISTE = [...]` direkt darunter |
 | Farben der Personen | `--c-name` Variablen oben im `:root` |
-| Crew-Sprüche | Abschnitt `<!-- CREW -->` im HTML |
-| Fahrplan / Spots / Regeln | jeweils der passende HTML-Abschnitt |
+| Crew-Sprüche & Missionen | Abschnitt `<!-- CREW -->` im HTML |
+| Hausregeln | Abschnitt `<!-- REGELN -->` im HTML |
 
 ### Landezeiten
 

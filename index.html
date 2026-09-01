@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Mallorca 2026 – Wer landet wann</title>
-<meta name="description" content="Unser Mallorca-Trip 2026: Live-Countdown bis zur Landung, die Crew, der Fahrplan, die Hausregeln und die Packliste.">
+<meta name="description" content="Unser Mallorca-Trip 2026 in Cala Pi: Live-Countdown bis zur Landung, die Crew, die Hausregeln und die Packliste.">
 <meta name="theme-color" content="#F6EFDD">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Mallorca">
 <meta property="og:title" content="Mallorca 2026 – wir kommen">
-<meta property="og:description" content="Live-Countdown bis zur Landung, die Crew, der Fahrplan und die heiligen Hausregeln.">
+<meta property="og:description" content="Cala Pi, sechs Leute, ein Countdown. Wer landet wann?">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B4%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,17 +143,8 @@
     font-family:var(--hand); font-size:clamp(25px,6vw,40px); color:var(--accent);
     display:inline-block; transform:rotate(-3deg); margin-top:12px;
   }
-  .hero-facts{display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:22px;}
-  .fact{
-    background:var(--card); border:1px solid var(--line); border-radius:14px;
-    padding:9px 14px; font-size:12.5px; font-weight:700;
-    display:flex; align-items:center; gap:7px;
-    box-shadow:0 10px 18px -16px rgba(88,58,20,.9);
-  }
-  .fact b{font-family:var(--display); font-size:14px;}
-  .fact span{color:var(--muted); font-weight:700;}
   .hero-cta{
-    margin-top:24px; display:inline-flex; align-items:center; gap:9px;
+    margin-top:30px; display:inline-flex; align-items:center; gap:9px;
     background:var(--accent); color:#fff; font-weight:800; font-size:14px; text-decoration:none;
     padding:13px 22px; border-radius:99px;
     box-shadow:0 14px 24px -14px rgba(214,73,51,.9);
@@ -280,30 +271,12 @@
   .mate h3{font-family:var(--display); font-size:19px; font-weight:800; margin-top:14px;}
   .role{font-family:var(--hand); font-size:19px; color:var(--pcolor); line-height:1.15; margin-top:2px;}
   .mate p{position:relative; font-size:12.5px; font-weight:600; color:var(--muted); margin-top:9px;}
-
-  /* ───────── Fahrplan ───────── */
-  .band{background:var(--card); border-block:1px solid var(--line);}
-  .plan{position:relative; padding-left:30px;}
-  .plan::before{content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px; background-image:linear-gradient(var(--line) 60%, transparent 40%); background-size:2px 10px;}
-  .day{position:relative; padding:0 0 22px 4px;}
-  .day::before{content:""; position:absolute; left:-26px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--paper); border:3px solid var(--accent);}
-  .day .dt{font-family:var(--display); font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--accent);}
-  .day h3{font-family:var(--display); font-size:19px; font-weight:800; margin-top:3px;}
-  .day p{font-size:13.5px; font-weight:600; color:var(--muted); margin-top:4px; max-width:56ch;}
-
-  /* ───────── Spots ───────── */
-  .spots{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px;}
-  .spot{
-    background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px 18px;
-    box-shadow:0 18px 30px -28px rgba(88,58,20,.9);
-    transition:transform .22s ease, background .22s ease;
+  .mate p.mission{
+    margin-top:11px; padding-top:10px; border-top:1px dashed var(--line);
+    font-size:12px; font-weight:800; color:var(--ink);
   }
-  @media (hover:hover){ .spot:hover{transform:translateY(-3px); background:#FFF9E8;} }
-  .spot:active{background:#FFF9E8;}
-  .spot .ico{font-size:26px; line-height:1;}
-  .spot h3{font-family:var(--display); font-size:17px; font-weight:800; margin-top:11px;}
-  .spot p{font-size:13px; font-weight:600; color:var(--muted); margin-top:5px;}
-  .tag{display:inline-block; margin-top:11px; font-size:10.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--deep); background:rgba(43,168,154,.16); padding:4px 9px; border-radius:99px;}
+
+  .band{background:var(--card); border-block:1px solid var(--line);}
 
   /* ───────── Regeln ───────── */
   .rules{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; counter-reset:r;}
@@ -356,8 +329,6 @@
     .card{border-radius:20px;}
     .list{padding:0 16px;}
     .pack-card{padding:18px 16px;}
-    .plan{padding-left:26px;}
-    .day::before{left:-24px;}
     footer .big{font-size:30px;}
   }
   @media (max-width:420px){
@@ -386,8 +357,6 @@
     <div class="nav-links">
       <a href="#countdown">Countdown</a>
       <a href="#crew">Crew</a>
-      <a href="#plan">Fahrplan</a>
-      <a href="#spots">Spots</a>
       <a href="#regeln">Regeln</a>
       <a href="#packen">Packliste</a>
     </div>
@@ -399,18 +368,11 @@
   <div class="sun"><i></i><b></b></div>
 
   <div class="wrap hero-in">
-    <div class="kicker reveal d1">☀️ Balearen · 39.5°N</div>
+    <div class="kicker reveal d1">☀️ Cala Pi · Mallorca</div>
     <h1 class="reveal d2">Mallorca<span class="year">2026</span></h1>
     <div class="scribble reveal d3">…und tschüss, Alltag!</div>
 
-    <div class="hero-facts reveal d4">
-      <div class="fact">🗓️ <b id="heroDays">–</b> <span id="heroDaysLabel">Tage bis zur ersten Landung</span></div>
-      <div class="fact">🧳 <b>6</b> <span>Leute</span></div>
-      <div class="fact">🍹 <b>∞</b> <span>Sangria</span></div>
-      <div class="fact">📶 <b>0</b> <span>Termine</span></div>
-    </div>
-
-    <a class="hero-cta reveal d5" href="#countdown">Wer landet wann? ✈️</a>
+    <a class="hero-cta reveal d4" href="#countdown">Wer landet wann? ✈️</a>
   </div>
 
   <div class="sea-top">
@@ -482,142 +444,54 @@
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">Die Besetzung</div>
-      <h2>Sechs Leute, <span class="hl">ein Ziel</span></h2>
-      <p class="lede">Jede:r bringt was mit. Manche Sonnencreme, manche nur gute Laune.</p>
+      <h2>Sechs Leute, <span class="hl">ein Haus</span></h2>
+      <p class="lede">Zusammengebracht von Laura – wir wohnen im Haus ihrer Eltern in Cala Pi. Die folgenden Beschreibungen sind wissenschaftlich exakt und treffen auf absolut jede Person zu.</p>
     </div>
 
-    <!-- Rollen/Sprüche einfach hier im HTML anpassen -->
+    <!-- Sprüche und Missionen einfach hier im HTML anpassen -->
     <div class="crew">
       <article class="mate" style="--pcolor:var(--c-paul)">
         <div class="avatar">P</div>
         <h3>Paul</h3>
-        <div class="role">Chef vom Grill &amp; der Playlist</div>
-        <p>Landet als Erster, checkt sofort, ob der Kühlschrank kalt genug ist.</p>
+        <div class="role">Wirkt entspannt, denkt viel</div>
+        <p>Braucht morgens kurz für sich und ist danach für alles zu haben. Kann gut zuhören und schlecht stillsitzen.</p>
+        <p class="mission">Mission: einmal richtig nichts tun.</p>
       </article>
       <article class="mate" style="--pcolor:var(--c-laura)">
         <div class="avatar">L</div>
         <h3>Laura</h3>
-        <div class="role">Ministerin für Sonnencreme</div>
-        <p>Hat LSF 50, ein Ersatzhandtuch und immer einen Plan B dabei.</p>
+        <div class="role">Hat immer irgendwie einen Plan</div>
+        <p>Denkt an Dinge, an die sonst keiner denkt, und tut so, als wäre das Zufall gewesen.</p>
+        <p class="mission">Mission: dass es allen gut geht.</p>
       </article>
       <article class="mate" style="--pcolor:var(--c-teresa)">
         <div class="avatar">T</div>
         <h3>Teresa</h3>
-        <div class="role">Beauftragte für Cocktails</div>
-        <p>Kennt schon die Bar, in der wir am zweiten Abend versacken werden.</p>
+        <div class="role">Sagt müde, meint noch lange nicht</div>
+        <p>Hat für jede Situation die passende Geschichte und für jede Geschichte die passende Länge.</p>
+        <p class="mission">Mission: mehr Meer.</p>
       </article>
       <article class="mate" style="--pcolor:var(--c-emma)">
         <div class="avatar">E</div>
         <h3>Emma</h3>
-        <div class="role">Die Vorhut</div>
-        <p>Schon auf der Insel. Testet Strände vor, rein aus Verantwortungsgefühl.</p>
+        <div class="role">Kurz beobachten, dann mittendrin</div>
+        <p>Merkt sich Kleinigkeiten über Leute, die die selbst längst vergessen haben.</p>
+        <p class="mission">Mission: ausschlafen ohne schlechtes Gewissen.</p>
       </article>
       <article class="mate" style="--pcolor:var(--c-maya)">
         <div class="avatar">M</div>
         <h3>Maya</h3>
-        <div class="role">Hoffotografin</div>
-        <p>Sorgt dafür, dass es hinterher Beweise gibt. Alle Beweise.</p>
+        <div class="role">Spontan, aber insgeheim vorbereitet</div>
+        <p>Lacht zu früh über die eigenen Witze – und liegt damit erstaunlich oft richtig.</p>
+        <p class="mission">Mission: jeden Abend ein Sonnenuntergang.</p>
       </article>
       <article class="mate" style="--pcolor:var(--c-helen)">
         <div class="avatar">H</div>
         <h3>Helen</h3>
-        <div class="role">Späte Ankunft, große Bühne</div>
-        <p>Kommt am Donnerstag – wird gebührend am Flughafen abgeholt. Vielleicht.</p>
+        <div class="role">Kommt später, ist sofort da</div>
+        <p>Hat nach zehn Minuten das Gefühl, schon die ganze Zeit dabei gewesen zu sein.</p>
+        <p class="mission">Mission: ankommen und nicht mehr weg wollen.</p>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ FAHRPLAN ═══════════ -->
-<section id="plan" class="band">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Grob geplant</div>
-      <h2>Der <span class="hl">Fahrplan</span></h2>
-      <p class="lede">Alles unverbindlich. Ein Plan auf Mallorca ist eher ein Vorschlag.</p>
-    </div>
-
-    <div class="plan">
-      <div class="day">
-        <div class="dt">Di · Tag 1</div>
-        <h3>Ankunft &amp; Erstversorgung</h3>
-        <p>Paul, Laura und Teresa landen am Abend. Mietwagen, Supermarkt, erste Runde auf der Terrasse.</p>
-      </div>
-      <div class="day">
-        <div class="dt">Mi · Tag 2</div>
-        <h3>Emma und Maya stoßen dazu</h3>
-        <p>Vormittags Strand zum Ankommen, abends sind wir schon zu fünft. Grillen bis es dunkel wird.</p>
-      </div>
-      <div class="day">
-        <div class="dt">Do · Tag 3</div>
-        <h3>Team komplett</h3>
-        <p>Tagsüber Bucht, abends Helen einsammeln. Danach: offizieller Startschuss.</p>
-      </div>
-      <div class="day">
-        <div class="dt">Fr–Sa</div>
-        <h3>Insel-Modus</h3>
-        <p>Tramuntana, Sóller, ein Tag Palma. Und mindestens ein Sonnenuntergang, bei dem alle kurz still sind.</p>
-      </div>
-      <div class="day">
-        <div class="dt">So–Mo</div>
-        <h3>Nichts tun, aber richtig</h3>
-        <p>Strand, Buch, Siesta, Wiederholung. Abends Karten, Musik, schlechte Entscheidungen.</p>
-      </div>
-      <div class="day">
-        <div class="dt">Di</div>
-        <h3>Abreise (leider)</h3>
-        <p>Koffer, ein letztes Café con leche, und die Frage: wann machen wir das wieder?</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ SPOTS ═══════════ -->
-<section id="spots">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">Muss man gesehen haben</div>
-      <h2>Spots für die <span class="hl">Wunschliste</span></h2>
-      <p class="lede">Keine Pflicht. Aber wenn wir schon da sind…</p>
-    </div>
-
-    <div class="spots">
-      <div class="spot">
-        <div class="ico">🏖️</div>
-        <h3>Es Trenc</h3>
-        <p>Kilometerlanger, karibisch weißer Strand im Süden. Früh da sein lohnt sich.</p>
-        <span class="tag">Strand</span>
-      </div>
-      <div class="spot">
-        <div class="ico">🚋</div>
-        <h3>Sóller mit dem Holzzug</h3>
-        <p>Alte Bahn durch Orangenhaine, dann Tram runter zum Hafen. Kitschig, aber gut.</p>
-        <span class="tag">Ausflug</span>
-      </div>
-      <div class="spot">
-        <div class="ico">🛵</div>
-        <h3>Cap de Formentor</h3>
-        <p>Serpentinen bis zum Leuchtturm ganz im Norden. Beste Aussicht der Insel.</p>
-        <span class="tag">Aussicht</span>
-      </div>
-      <div class="spot">
-        <div class="ico">🏛️</div>
-        <h3>Palma Altstadt</h3>
-        <p>Kathedrale, Gassen, viel zu teurer Eiskaffee. Genau richtig für einen Nachmittag.</p>
-        <span class="tag">Stadt</span>
-      </div>
-      <div class="spot">
-        <div class="ico">🤿</div>
-        <h3>Cala Llombards</h3>
-        <p>Kleine Bucht mit türkisem Wasser und Felsen zum Springen. Mutprobe inklusive.</p>
-        <span class="tag">Bucht</span>
-      </div>
-      <div class="spot">
-        <div class="ico">🌅</div>
-        <h3>Sunset im Westen</h3>
-        <p>Irgendwo zwischen Andratx und Banyalbufar. Getränk mitnehmen, hinsetzen, staunen.</p>
-        <span class="tag">Abends</span>
-      </div>
     </div>
   </div>
 </section>
@@ -632,14 +506,14 @@
     </div>
 
     <div class="rules">
-      <div class="rule"><b>Handy in die Schale</b><span>Beim Essen. Ausnahmen: Fotos und Musik.</span></div>
-      <div class="rule"><b>Wer kocht, spült nicht</b><span>Ein Naturgesetz. Gilt auch für Grillmeister.</span></div>
-      <div class="rule"><b>Playlist-Demokratie</b><span>Jede:r darf skippen – aber nur einmal pro Abend.</span></div>
-      <div class="rule"><b>Kein Wecker vor 9</b><span>Außer für Sonnenaufgang oder Flughafen-Taxi.</span></div>
-      <div class="rule"><b>Der Letzte am Pool</b><span>…räumt die Handtücher weg. Ja, du.</span></div>
-      <div class="rule"><b>Sonnenbrand = Runde</b><span>Wer sich nicht eincremt, zahlt abends.</span></div>
-      <div class="rule"><b>Einmal am Tag ins Meer</b><span>Nicht verhandelbar. Auch bei Wind.</span></div>
-      <div class="rule"><b>Nie „nur noch einen“</b><span>Es ist noch nie bei einem geblieben.</span></div>
+      <div class="rule"><b>Der Tag beginnt, wenn er beginnt</b><span>Kein Wecker. Ausnahme: Flughafen.</span></div>
+      <div class="rule"><b>Wer kocht, spült nicht</b><span>Ein Naturgesetz. Bisher unwiderlegt.</span></div>
+      <div class="rule"><b>Die Playlist gehört allen</b><span>Skippen erlaubt, Meckern nicht.</span></div>
+      <div class="rule"><b>Pläne sind Vorschläge</b><span>Wer heute nichts machen will, macht heute nichts.</span></div>
+      <div class="rule"><b>Einmal am Tag ins Wasser</b><span>Auch bei Wind. Auch bei Ausreden.</span></div>
+      <div class="rule"><b>Das letzte Stück gehört dem, der es holt</b><span>Küchenrecht ist Küchenrecht.</span></div>
+      <div class="rule"><b>Handy darf, muss aber nicht</b><span>Fotos jederzeit, Antworten irgendwann.</span></div>
+      <div class="rule"><b>Niemand muss lustig sein</b><span>Stilles Frühstück ist auch ein schönes Frühstück.</span></div>
     </div>
   </div>
 </section>
@@ -665,7 +539,7 @@
 <footer>
   <div class="wrap">
     <div class="big">Bis bald am Meer 🌊</div>
-    <p>Mallorca 2026 · gebaut zwischen Vorfreude und Flugsuche</p>
+    <p>Cala Pi · Mallorca 2026 · gebaut zwischen Vorfreude und Flugsuche</p>
     <div class="dots">🌴 ☀️ 🍹</div>
   </div>
 </footer>
@@ -734,10 +608,6 @@
     };
   });
 
-  const firstTarget = Math.min(...people.map(p => p.target));
-  const heroDaysEl = document.getElementById('heroDays');
-  const heroDaysLabelEl = document.getElementById('heroDaysLabel');
-
   function pad(n){ return String(n).padStart(2,'0'); }
 
   function tick(){
@@ -776,16 +646,6 @@
     if(soonestPerson) soonestPerson.el.classList.add('is-next');
 
     document.body.classList.toggle('everyone-here', allArrived);
-
-    const heroDiff = firstTarget - now;
-    if(heroDiff > 0){
-      const d = Math.ceil(heroDiff/86400000);
-      heroDaysEl.textContent = d;
-      heroDaysLabelEl.textContent = (d === 1 ? 'Tag' : 'Tage') + ' bis zur ersten Landung';
-    } else {
-      heroDaysEl.textContent = '🎉';
-      heroDaysLabelEl.textContent = 'Der Urlaub läuft';
-    }
   }
 
   tick();
