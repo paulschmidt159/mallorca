@@ -498,7 +498,7 @@
     <div class="sec-head">
       <div class="eyebrow">Die Besetzung</div>
       <h2>Sechs Leute, <span class="hl">ein Haus</span></h2>
-      <p class="lede">Zusammengebracht von Laura – wir wohnen im Haus ihrer Eltern in Cala Pi. Die folgenden Beschreibungen sind wissenschaftlich exakt und treffen auf absolut jede Person zu.</p>
+      <p class="lede">Zusammengebracht von Laura – wir wohnen im Haus ihrer Eltern in Cala Pi. Die Beschreibungen sind wissenschaftlich exakt und treffen auf absolut jede Person zu. Die drei Fragen darunter füllt jede:r selbst aus – einfach auf „bearbeiten“ tippen.</p>
     </div>
 
     <!-- Sprüche und Missionen einfach hier im HTML anpassen -->
@@ -645,15 +645,10 @@
     ["mitbringsel", "Ich bringe mit",      "Was du mitbringst …"],
   ];
 
-  /* Anzeige, solange die Datenbank noch nichts geliefert hat */
-  const SB_DEFAULT = {
-    laura:  { mission:"dass es allen gut geht" },
-    teresa: { mission:"mehr Meer" },
-    emma:   { mission:"ausschlafen ohne schlechtes Gewissen" },
-    helen:  { mission:"ankommen und nicht mehr weg wollen" },
-    maya:   { mission:"jeden Abend ein Sonnenuntergang" },
-    paul:   { mission:"einmal richtig nichts tun" },
-  };
+  /* Alle Fragen starten unbeantwortet. Wer hier für eine Person einen Wert
+     einträgt (z.B. paul: { mission:"..." }), sieht ihn nur, solange die
+     Datenbank noch nicht geantwortet hat – danach gewinnt immer Supabase. */
+  const SB_DEFAULT = {};
 
   /* Packliste – Einträge hier einfach ergänzen oder rauswerfen */
   const PACKLISTE = [
