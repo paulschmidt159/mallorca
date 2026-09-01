@@ -156,7 +156,11 @@
     display:inline-block; transform:rotate(-3deg); margin-top:12px;
   }
   .hero-cta{
-    margin-top:30px; display:inline-flex; align-items:center; gap:9px;
+    /* block-level und zentriert: liegt damit immer in einer eigenen Zeile,
+       nie neben dem Handschrift-Spruch */
+    margin:30px auto 0;
+    display:flex; width:max-content; max-width:100%;
+    align-items:center; justify-content:center; gap:9px;
     background:var(--accent); color:#fff; font-weight:800; font-size:14px; text-decoration:none;
     padding:13px 22px; border-radius:99px;
     box-shadow:0 14px 24px -14px rgba(214,73,51,.9);
